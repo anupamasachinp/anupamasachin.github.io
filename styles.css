@@ -64,7 +64,7 @@ nav ul li a:hover {
 /* HERO SECTION */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, #2563EB, #06B6D4);
+   background: linear-gradient(135deg, #0F172A, #1E3A8A, #2563EB);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,7 +93,7 @@ nav ul li a:hover {
 }
 
 .hero-content h1 span {
-    color: #FACC15;
+    color: #E0F2FE;
 }
 
 .hero-content h3 {
