@@ -377,3 +377,47 @@ footer {
         align-items: flex-start;
     }
 }
+/* =========================
+   HERO SKILLS TICKER
+   ========================= */
+.skills-ticker {
+    margin: 22px auto 0;
+    max-width: 900px;
+    overflow: hidden;
+    border-radius: 999px;
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+}
+
+.ticker-track {
+    display: inline-flex;
+    gap: 12px;
+    padding-left: 18px;
+    white-space: nowrap;
+    animation: tickerMove 20s linear infinite;
+}
+
+.ticker-track span {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* animation */
+@keyframes tickerMove {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* accessibility: stop animation if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .ticker-track { animation: none; }
+}
