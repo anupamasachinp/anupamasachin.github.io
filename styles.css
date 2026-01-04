@@ -221,20 +221,96 @@ nav ul li a:hover {
     color: #0F172A;
 }
 
-/* Power BI Report Images */
-.report-image {
-    width: 100%;
-    margin-top: 12px;
-    margin-bottom: 22px;
-    border-radius: 14px;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.15);
-}
-
 /* Report note */
 .report-note {
     margin-top: 12px;
     color: #475569;
     font-size: 14px;
+}
+
+/* =========================
+   IMAGE CAROUSEL (Reports)
+   ========================= */
+.carousel {
+    margin-top: 18px;
+}
+
+.carousel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.carousel-header h4 {
+    margin: 0;
+    font-weight: 800;
+    color: #0F172A;
+}
+
+.carousel-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.carousel-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 2px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #0F172A;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.carousel-btn:hover {
+    border-color: #2563EB;
+    transform: translateY(-1px);
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #0b1220;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+}
+
+.carousel-img {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.carousel-img.active {
+    display: block;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    border: 0;
+    background: #CBD5E1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dot.active {
+    background: #2563EB;
+    transform: scale(1.15);
 }
 
 /* =========================================================
@@ -294,5 +370,10 @@ footer {
 
     nav ul {
         gap: 16px;
+    }
+
+    .carousel-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
