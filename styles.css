@@ -378,10 +378,11 @@ footer {
     }
 }
 /* =========================
-   HERO SKILLS TICKER
+   HERO SKILLS TICKER (Responsive + Pause on Hover)
    ========================= */
 .skills-ticker {
     margin: 22px auto 0;
+    width: 100%;
     max-width: 900px;
     overflow: hidden;
     border-radius: 999px;
@@ -391,15 +392,25 @@ footer {
     backdrop-filter: blur(10px);
 }
 
+/* Smooth, responsive track */
 .ticker-track {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
     gap: 12px;
+    width: max-content;          /* makes it fit all items */
     padding-left: 18px;
-    white-space: nowrap;
-    animation: tickerMove 20s linear infinite;
+    animation: tickerMove 22s linear infinite;
+    will-change: transform;      /* smoother animation */
 }
 
+/* Pause when user hovers anywhere on ticker */
+.skills-ticker:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+/* Each skill chip */
 .ticker-track span {
+    flex: 0 0 auto;
     display: inline-flex;
     align-items: center;
     padding: 8px 14px;
@@ -409,12 +420,28 @@ footer {
     color: #FFFFFF;
     font-size: 14px;
     font-weight: 600;
+    white-space: nowrap;
+    cursor: default;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
-/* animation */
+.ticker-track span:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.20);
+}
+
+/* Animation */
 @keyframes tickerMove {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
+}
+
+/* Mobile: slightly smaller pills */
+@media (max-width: 480px) {
+    .ticker-track span {
+        font-size: 12px;
+        padding: 7px 12px;
+    }
 }
 
 /* accessibility: stop animation if user prefers reduced motion */
