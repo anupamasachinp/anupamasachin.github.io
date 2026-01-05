@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anupama Sachin | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anupama Sachin | Portfolio</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
 
-    <!-- JS -->
-    <script defer src="script.js"></script>
+  <!-- JS -->
+  <script defer src="script.js"></script>
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER / NAVIGATION
-     ========================= -->
-<header>
-    <nav>
-        <h2 class="logo">Anupama<span>Sachin</span></h2>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#reports">Reports</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+  <!-- Skip link (accessibility + better mobile UX) -->
+  <a class="skip-link" href="#about">Skip to content</a>
 
-<!-- =========================
-     HERO SECTION
-     ========================= -->
-<section class="hero">
-    <div class="hero-content fade-in">
+  <!-- =========================
+       HEADER / NAVIGATION
+       ========================= -->
+  <header>
+    <nav class="nav">
+      <h2 class="logo">Anupama<span>Sachin</span></h2>
+
+      <!-- Hamburger button for mobile -->
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+      >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Nav links -->
+      <ul id="primary-nav" class="nav-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- =========================
+         HERO SECTION
+         ========================= -->
+    <section class="hero">
+      <div class="hero-content fade-in">
 
         <!-- PROFILE PHOTO -->
-        <img src="./assete/profile.jpg" class="profile-photo" alt="Anupama Sachin">
+        <img src="./assete/profile.jpg" class="profile-photo" alt="Anupama Sachin" loading="lazy">
 
         <h1>Hello, I'm <span> Sachin</span></h1>
         <h3>Power BI Developer • Analyst • Power Apps Developer</h3>
@@ -48,60 +68,59 @@
 
         <!-- Skills Ticker (Scroller) -->
         <div class="skills-ticker" aria-label="Key skills scrolling list">
-            <div class="ticker-track">
-                <span>Power BI</span>
-                <span>DAX</span>
-                <span>SQL</span>
-                <span>Power Query</span>
-                <span>Excel (Advanced)</span>
-                <span>Power Apps</span>
-                <span>Power Automate</span>
-                <span>Data Modelling</span>
-                <span>Dashboard Design</span>
-                <span>Python</span>
-                <span>R</span>
+          <div class="ticker-track">
+            <span>Power BI</span>
+            <span>DAX</span>
+            <span>SQL</span>
+            <span>Power Query</span>
+            <span>Excel (Advanced)</span>
+            <span>Power Apps</span>
+            <span>Power Automate</span>
+            <span>Data Modelling</span>
+            <span>Dashboard Design</span>
+            <span>Python</span>
+            <span>R</span>
 
-                <!-- duplicate for seamless loop -->
-                <span>Power BI</span>
-                <span>DAX</span>
-                <span>SQL</span>
-                <span>Power Query</span>
-                <span>Excel (Advanced)</span>
-                <span>Power Apps</span>
-                <span>Power Automate</span>
-                <span>Data Modelling</span>
-                <span>Dashboard Design</span>
-                <span>Python</span>
-                <span>R</span>
-            </div>
+            <!-- duplicate for seamless loop (hidden from screen readers) -->
+            <span aria-hidden="true">Power BI</span>
+            <span aria-hidden="true">DAX</span>
+            <span aria-hidden="true">SQL</span>
+            <span aria-hidden="true">Power Query</span>
+            <span aria-hidden="true">Excel (Advanced)</span>
+            <span aria-hidden="true">Power Apps</span>
+            <span aria-hidden="true">Power Automate</span>
+            <span aria-hidden="true">Data Modelling</span>
+            <span aria-hidden="true">Dashboard Design</span>
+            <span aria-hidden="true">Python</span>
+            <span aria-hidden="true">R</span>
+          </div>
         </div>
 
-    </div>
-</section>
+      </div>
+    </section>
 
-
-<!-- =========================
-     ABOUT
-     ========================= -->
-<section id="about" class="section fade-in">
-    <h2>About Me</h2>
-    <p>
+    <!-- =========================
+         ABOUT
+         ========================= -->
+    <section id="about" class="section fade-in">
+      <h2>About Me</h2>
+      <p>
         I am a multi-skilled professional with strong expertise in data analytics, business intelligence,
         and digital transformation. With hands-on experience in Power BI, SQL, Excel, automation tools,
         and dashboard development, I create analytical solutions that improve decision-making and operational efficiency.
         Currently pursuing an MSc in Business Analytics, I focus on solving real-world business problems using
         data-driven insights.
-    </p>
-</section>
+      </p>
+    </section>
 
-<!-- =========================
-     SKILLS
-     ========================= -->
-<section id="skills" class="section fade-in">
-    <h2>Skills</h2>
-    <div class="skills-grid">
+    <!-- =========================
+         SKILLS
+         ========================= -->
+    <section id="skills" class="section fade-in">
+      <h2>Skills</h2>
+      <div class="skills-grid">
         <div class="skill-card">Power BI</div>
-        <div class="skill-card">ML </div>
+        <div class="skill-card">ML</div>
         <div class="skill-card">DAX</div>
         <div class="skill-card">SQL</div>
         <div class="skill-card">Python</div>
@@ -110,379 +129,279 @@
         <div class="skill-card">Power Apps</div>
         <div class="skill-card">Power Automate</div>
         <div class="skill-card">Data Modelling</div>
-        <div class="skill-card">ETL pipe line </div>
-        
-    </div>
-</section>
+        <div class="skill-card">ETL Pipeline</div>
+      </div>
+    </section>
 
-<!-- =========================
-     EXPERIENCE
-     ========================= -->
-<section id="experience" class="section fade-in">
-    <h2>Experience</h2>
+    <!-- =========================
+         EXPERIENCE
+         ========================= -->
+    <section id="experience" class="section fade-in">
+      <h2>Experience</h2>
 
-    <!-- HITACHI / CURRENT ROLE -->
-    <div class="experience-box">
-         <h3>Data Analyst – Hitachi Digital Payment Solutions <span style="font-weight:400;">( 2021 – Present )</span></h3>
+      <div class="experience-box">
+        <h3>Data Analyst – Hitachi Digital Payment Solutions <span style="font-weight:400;">( 2021 – Present )</span></h3>
 
-        <p>
-            <strong>Tools Used:</strong> Power BI, Power Query, DAX, Microsoft SharePoint, Excel
-        </p>
+        <p><strong>Tools Used:</strong> Power BI, Power Query, DAX, Microsoft SharePoint, Excel</p>
 
         <ul>
-            <li>
-                Designed and developed interactive <strong>Power BI dashboards</strong> to monitor daily
-                operational tasks and provide weekly updates on departmental performance.
-            </li>
-            <li>
-                Automated weekly operational reporting, streamlining task completion analysis
-                and improving visibility of performance trends throughout the year.
-            </li>
-            <li>
-                Performed <strong>ETL processes</strong> using Power Query, including data extraction,
-                cleaning, transformation, and preparation from multiple data sources.
-            </li>
-            <li>
-                Built optimized <strong>data models</strong> and wrote advanced
-                <strong>DAX measures</strong> to calculate key metrics and KPIs.
-            </li>
-            <li>
-                Developed visually intuitive and interactive reports to support
-                <strong>data-driven decision-making</strong> across operational teams.
-            </li>
+          <li>Designed and developed interactive <strong>Power BI dashboards</strong> to monitor daily operational tasks and provide weekly updates on departmental performance.</li>
+          <li>Automated weekly operational reporting, streamlining task completion analysis and improving visibility of performance trends throughout the year.</li>
+          <li>Performed <strong>ETL processes</strong> using Power Query, including data extraction, cleaning, transformation, and preparation from multiple data sources.</li>
+          <li>Built optimized <strong>data models</strong> and wrote advanced <strong>DAX measures</strong> to calculate key metrics and KPIs.</li>
+          <li>Developed visually intuitive and interactive reports to support <strong>data-driven decision-making</strong> across operational teams.</li>
         </ul>
-    </div>
+      </div>
 
-    <!-- NOVUS TECHNOLOGIES -->
-    <div class="experience-box">
+      <div class="experience-box">
         <h3>Executive – Novus Technologies Pte Ltd <span style="font-weight:400;">(2018 – 2020)</span></h3>
 
-        <p>
-            <strong>Projects:</strong> DFCC Bank (ATM / CRM), Peoples Bank (ATM / CRM)
-        </p>
-
-        <p>
-            <strong>Tools Used:</strong> Advanced Excel, Power Query
-        </p>
+        <p><strong>Projects:</strong> DFCC Bank (ATM / CRM), Peoples Bank (ATM / CRM)</p>
+        <p><strong>Tools Used:</strong> Advanced Excel, Power Query</p>
 
         <ul>
-            <li>
-                Developed and maintained <strong>Excel dashboards</strong> to monitor supplier operations
-                and service quality, improving operational visibility for banking clients.
-            </li>
-            <li>
-                Created <strong>ATM and CRM reconciliation models</strong> using Excel and Power Query,
-                enhancing reconciliation accuracy and streamlining operational processes.
-            </li>
-            <li>
-                Built a <strong>Terminal Performance Dashboard</strong> to identify frequent breakdowns
-                and customer access failures, enabling the implementation of
-                <strong>preventive maintenance (PM)</strong> services and reducing downtime.
-            </li>
-            <li>
-                Designed and maintained <strong>Supplier Operations Dashboards</strong> using advanced
-                formulas, pivot tables, conditional formatting, and customized charts to enhance
-                service delivery for bank customers.
-            </li>
-            <li>
-                Managed an <strong>Asset Monitoring Dashboard</strong> in Excel to track asset status,
-                utilizing data import/export, VLOOKUP, and advanced formulas for accurate reporting.
-            </li>
+          <li>Developed and maintained <strong>Excel dashboards</strong> to monitor supplier operations and service quality, improving operational visibility for banking clients.</li>
+          <li>Created <strong>ATM and CRM reconciliation models</strong> using Excel and Power Query, enhancing reconciliation accuracy and streamlining operational processes.</li>
+          <li>Built a <strong>Terminal Performance Dashboard</strong> to identify frequent breakdowns and customer access failures, enabling the implementation of <strong>preventive maintenance (PM)</strong> services and reducing downtime.</li>
+          <li>Designed and maintained <strong>Supplier Operations Dashboards</strong> using advanced formulas, pivot tables, conditional formatting, and customized charts to enhance service delivery for bank customers.</li>
+          <li>Managed an <strong>Asset Monitoring Dashboard</strong> in Excel to track asset status, utilizing data import/export, VLOOKUP, and advanced formulas for accurate reporting.</li>
         </ul>
-    </div>
+      </div>
 
-    <!-- MAS LINEA AQUA -->
-    <div class="experience-box">
-        <h3>Implant Trainee – MAS Linea AQUA (Sourcing & Supply Chain)
-            <span style="font-weight:400;">(2017 – 2018)</span>
-        </h3>
+      <div class="experience-box">
+        <h3>Implant Trainee – MAS Linea AQUA (Sourcing & Supply Chain) <span style="font-weight:400;">(2017 – 2018)</span></h3>
 
-        <p>
-            <strong>Tools Used:</strong> Advanced Excel, Visio
-        </p>
+        <p><strong>Tools Used:</strong> Advanced Excel, Visio</p>
 
         <ul>
-            <li>
-                Created <strong>Excel-based purchasing order tracking modules</strong> using conditional
-                formatting, data validation, and advanced formulas to ensure real-time status updates
-                and data accuracy.
-            </li>
-            <li>
-                Assisted in <strong>process improvement initiatives</strong> by implementing and modifying
-                process maps, identifying operational gaps, and supporting daily workflow optimization.
-            </li>
-            <li>
-                Coordinated with <strong>foreign customers</strong> to manage freight operations,
-                ensuring on-time deliveries and maintaining accuracy in logistics and documentation.
-            </li>
+          <li>Created <strong>Excel-based purchasing order tracking modules</strong> using conditional formatting, data validation, and advanced formulas to ensure real-time status updates and data accuracy.</li>
+          <li>Assisted in <strong>process improvement initiatives</strong> by implementing and modifying process maps, identifying operational gaps, and supporting daily workflow optimization.</li>
+          <li>Coordinated with <strong>foreign customers</strong> to manage freight operations, ensuring on-time deliveries and maintaining accuracy in logistics and documentation.</li>
         </ul>
-    </div>
-</section>
+      </div>
+    </section>
 
+    <!-- =========================
+         PROJECTS
+         ========================= -->
+    <section id="projects" class="section fade-in">
+      <h2>Projects</h2>
 
-<!-- =========================
-     PROJECTS
-     ========================= -->
-<section id="projects" class="section fade-in">
-    <h2>Projects</h2>
-
-    <!-- HR ANALYTICS PROJECT -->
-    <div class="project-card">
+      <div class="project-card">
         <h3>HR Analytics Dashboard</h3>
+        <p>Developed an interactive <strong>Power BI dashboard</strong> to analyze employee trends, workforce demographics, and turnover patterns, supporting HR decision-making.</p>
+        <p><strong>Technologies:</strong> Power BI, Power Query, DAX, Excel</p>
+      </div>
 
-        <p>
-            Developed an interactive <strong>Power BI dashboard</strong> to analyze employee trends,
-            workforce demographics, and turnover patterns, supporting HR decision-making.
-        </p>
-
-        <p>
-            <strong>Technologies:</strong> Power BI, Power Query, DAX, Excel
-        </p>
-    </div>
-
-    <!-- SALES DASHBOARD PROJECT -->
-    <div class="project-card">
+      <div class="project-card">
         <h3>Sales Dashboard (Kaggle Dataset)</h3>
 
-        <p>
-            Designed and developed a <strong>Power BI sales dashboard</strong> using a Kaggle dataset
-            to analyze store operations and business performance.
-        </p>
+        <p>Designed and developed a <strong>Power BI sales dashboard</strong> using a Kaggle dataset to analyze store operations and business performance.</p>
 
         <ul>
-            <li><strong>Overview:</strong> Key sales metrics and overall performance trends</li>
-            <li><strong>Product Analysis:</strong> Performance by product category and top-selling items</li>
-            <li><strong>Geo Analysis:</strong> Sales distribution across countries and regions</li>
+          <li><strong>Overview:</strong> Key sales metrics and overall performance trends</li>
+          <li><strong>Product Analysis:</strong> Performance by product category and top-selling items</li>
+          <li><strong>Geo Analysis:</strong> Sales distribution across countries and regions</li>
         </ul>
 
-        <p>
-            Demonstrated the ability to handle large datasets and derive actionable insights
-            through effective <strong>data visualization</strong>.
-        </p>
+        <p>Demonstrated the ability to handle large datasets and derive actionable insights through effective <strong>data visualization</strong>.</p>
+        <p><strong>Technologies:</strong> Power BI, Power Query, DAX, Excel</p>
 
         <p>
-            <strong>Technologies:</strong> Power BI, Power Query, DAX, Excel
+          🔗 <a
+            href="https://app.powerbi.com/view?r=eyJrIjoiMGU1ZjY4ZmItZmJiOS00MjljLWExMGQtZTFhYzNhNTRjNDM2IiwidCI6ImYzZmMyY2Y5LWUzMTItNDBmOS1hNDQ4LTkyMWJjNmZhMmViYSIsImMiOjEwfQ%3D%3D&pageName=88c4048e3cc14a9dabd8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Power BI Dashboard
+          </a>
         </p>
+      </div>
 
-        <p>
-            🔗 <a href="https://app.powerbi.com/view?r=eyJrIjoiMGU1ZjY4ZmItZmJiOS00MjljLWExMGQtZTFhYzNhNTRjNDM2IiwidCI6ImYzZmMyY2Y5LWUzMTItNDBmOS1hNDQ4LTkyMWJjNmZhMmViYSIsImMiOjEwfQ%3D%3D&pageName=88c4048e3cc14a9dabd8"
-               target="_blank">
-                View Power BI Dashboard
-            </a>
-        </p>
-    </div>
-
-    <!-- POWER APPS INSPECTION SYSTEM -->
-    <div class="project-card">
+      <div class="project-card">
         <h3>ATM Booth Inspection & Reporting System (Power Apps)</h3>
 
         <p>
-            Designed and implemented an <strong>end-to-end digital inspection and reporting system</strong>
-            using the Microsoft Power Platform to capture, track, and report ATM booth inspection data
-            in real time, improving operational visibility and response times.
+          Designed and implemented an <strong>end-to-end digital inspection and reporting system</strong>
+          using the Microsoft Power Platform to capture, track, and report ATM booth inspection data
+          in real time, improving operational visibility and response times.
         </p>
 
-        <p>
-            <strong>Solution Architecture:</strong><br>
-            Power Apps → SharePoint Lists → Power Automate → Excel Online
-        </p>
+        <p><strong>Solution Architecture:</strong><br>Power Apps → SharePoint Lists → Power Automate → Excel Online</p>
 
         <ul>
-            <li>
-                Developed a <strong>mobile-friendly Power Apps application</strong> to record ATM booth
-                inspection details, defects, and observations directly from the field.
-            </li>
-            <li>
-                Used <strong>SharePoint Lists</strong> as a centralized and secure data repository to
-                maintain data consistency, version control, and access management.
-            </li>
-            <li>
-                Implemented <strong>Power Automate workflows</strong> to trigger instant notifications
-                and reports to relevant teams upon inspection submission.
-            </li>
-            <li>
-                Integrated inspection data with <strong>Excel Online</strong> to support structured
-                reporting, tracking, and historical analysis.
-            </li>
+          <li>Developed a <strong>mobile-friendly Power Apps application</strong> to record ATM booth inspection details, defects, and observations directly from the field.</li>
+          <li>Used <strong>SharePoint Lists</strong> as a centralized and secure data repository to maintain data consistency, version control, and access management.</li>
+          <li>Implemented <strong>Power Automate workflows</strong> to trigger instant notifications and reports to relevant teams upon inspection submission.</li>
+          <li>Integrated inspection data with <strong>Excel Online</strong> to support structured reporting, tracking, and historical analysis.</li>
         </ul>
 
         <p><strong>Business Impact:</strong></p>
         <ul>
-            <li>Reduced inspection reporting time by <strong>over 50%</strong> by eliminating manual reporting.</li>
-            <li>Improved data accuracy and consistency by using standardized digital forms.</li>
-            <li>Enabled <strong>real-time visibility</strong> of inspection outcomes for faster decision-making.</li>
-            <li>Enhanced operational efficiency and accountability across ATM maintenance activities.</li>
-        
-        <p>
-            <strong>Technologies:</strong> Power Apps, Power Automate, SharePoint Lists, Excel Online
-        </p>
-    </div>
-</section>
+          <li>Reduced inspection reporting time by <strong>over 50%</strong> by eliminating manual reporting.</li>
+          <li>Improved data accuracy and consistency by using standardized digital forms.</li>
+          <li>Enabled <strong>real-time visibility</strong> of inspection outcomes for faster decision-making.</li>
+          <li>Enhanced operational efficiency and accountability across ATM maintenance activities.</li>
+        </ul>
 
+        <p><strong>Technologies:</strong> Power Apps, Power Automate, SharePoint Lists, Excel Online</p>
+      </div>
+    </section>
 
-<!-- =========================
-     REPORTS
-     ========================= -->
-<section id="reports" class="section fade-in">
-    <h2>Reports</h2>
+    <!-- =========================
+         REPORTS
+         ========================= -->
+    <section id="reports" class="section fade-in">
+      <h2>Reports</h2>
 
-    <!-- POWER BI REPORT 01: TOURIST ARRIVALS -->
-    <div class="report-box">
+      <div class="report-box">
         <h3>Tourist Arrivals Dashboard (Power BI)</h3>
 
         <p>
-            Power BI dashboard developed to analyze tourism arrival trends,
-            seasonal patterns, and geographical distribution. The report
-            supports data-driven decision-making through interactive visuals
-            and KPI tracking.
+          Power BI dashboard developed to analyze tourism arrival trends,
+          seasonal patterns, and geographical distribution. The report
+          supports data-driven decision-making through interactive visuals
+          and KPI tracking.
         </p>
 
-        <!-- Image Carousel -->
         <div class="carousel" data-carousel="tourism">
-            <div class="carousel-header">
-                <h4 id="tourism-caption">Overview</h4>
+          <div class="carousel-header">
+            <h4 id="tourism-caption">Overview</h4>
 
-                <div class="carousel-controls">
-                    <button class="carousel-btn" type="button" data-prev="tourism">‹</button>
-                    <button class="carousel-btn" type="button" data-next="tourism">›</button>
-                </div>
+            <div class="carousel-controls">
+              <button class="carousel-btn" type="button" data-prev="tourism">‹</button>
+              <button class="carousel-btn" type="button" data-next="tourism">›</button>
             </div>
+          </div>
 
-            <div class="carousel-track">
-                <img src="./assete/tourism-overview.png" alt="Tourism Dashboard Overview" class="carousel-img active" data-caption="Overview">
-                <img src="./assete/tourism-det.png" alt="Tourism Dashboard Detailed Analysis" class="carousel-img" data-caption="Detailed Analysis">
-                <img src="./assete/tourism-geo.png" alt="Tourism Dashboard Geo Analysis" class="carousel-img" data-caption="Geographical Analysis">
-            </div>
+          <div class="carousel-track">
+            <img src="./assete/tourism-overview.png" alt="Tourism Dashboard Overview" class="carousel-img active" data-caption="Overview" loading="lazy">
+            <img src="./assete/tourism-det.png" alt="Tourism Dashboard Detailed Analysis" class="carousel-img" data-caption="Detailed Analysis" loading="lazy">
+            <img src="./assete/tourism-geo.png" alt="Tourism Dashboard Geo Analysis" class="carousel-img" data-caption="Geographical Analysis" loading="lazy">
+          </div>
 
-            <div class="carousel-dots" aria-label="Carousel navigation">
-                <button class="dot active" type="button" data-dot="tourism" data-index="0" aria-label="Overview"></button>
-                <button class="dot" type="button" data-dot="tourism" data-index="1" aria-label="Detailed Analysis"></button>
-                <button class="dot" type="button" data-dot="tourism" data-index="2" aria-label="Geographical Analysis"></button>
-            </div>
+          <div class="carousel-dots" aria-label="Carousel navigation">
+            <button class="dot active" type="button" data-dot="tourism" data-index="0" aria-label="Overview"></button>
+            <button class="dot" type="button" data-dot="tourism" data-index="1" aria-label="Detailed Analysis"></button>
+            <button class="dot" type="button" data-dot="tourism" data-index="2" aria-label="Geographical Analysis"></button>
+          </div>
         </div>
 
-        <p>
-            <strong>Technologies:</strong> Power BI, Power Query, DAX, Excel
-        </p>
+        <p><strong>Technologies:</strong> Power BI, Power Query, DAX, Excel</p>
 
         <p class="report-note">
-            <em>
-                Live interactive demo available upon request due to organizational
-                security restrictions.
-            </em>
+          <em>Live interactive demo available upon request due to organizational security restrictions.</em>
         </p>
-    </div>
+      </div>
 
-    <!-- POWER BI REPORT 02: GLOBAL SUPERSTORE (VIDEO) -->
-    <div class="report-box">
+      <div class="report-box">
         <h3>Global Superstore Summary Dashboard (Power BI)</h3>
 
         <p>
-            This project presents an executive-level Power BI dashboard built using the
-            Global Superstore dataset. The dashboard provides a comprehensive overview
-            of business performance across regions, categories, and time periods,
-            supporting strategic and operational decision-making.
+          This project presents an executive-level Power BI dashboard built using the
+          Global Superstore dataset. The dashboard provides a comprehensive overview
+          of business performance across regions, categories, and time periods,
+          supporting strategic and operational decision-making.
         </p>
 
         <p>
-            Key insights include total sales, profit, discount impact, regional performance,
-            category-wise analysis, and monthly sales and profit trends with interactive
-            filtering.
+          Key insights include total sales, profit, discount impact, regional performance,
+          category-wise analysis, and monthly sales and profit trends with interactive
+          filtering.
         </p>
 
         <h4>Dashboard Walkthrough (Video)</h4>
 
         <div class="embed-container">
-            <iframe
-                src="https://drive.google.com/file/d/1OPWJGnFnoda1d-vIIuKObBZlQ9QcmOFQ/preview"
-                allow="autoplay"
-                allowfullscreen>
-            </iframe>
+          <iframe
+            src="https://drive.google.com/file/d/1OPWJGnFnoda1d-vIIuKObBZlQ9QcmOFQ/preview"
+            allow="autoplay"
+            allowfullscreen
+            title="Global Superstore Dashboard Video"
+          ></iframe>
         </div>
 
         <p>
-            <strong>Key Features:</strong>
-            KPI cards, profit &amp; sales comparison by region, category-level performance analysis,
-            monthly trend analysis, and interactive slicers for year and quarter selection.
+          <strong>Key Features:</strong>
+          KPI cards, profit &amp; sales comparison by region, category-level performance analysis,
+          monthly trend analysis, and interactive slicers for year and quarter selection.
         </p>
 
-        <p>
-            <strong>Technologies:</strong> Power BI, Power Query, DAX, Excel
-        </p>
+        <p><strong>Technologies:</strong> Power BI, Power Query, DAX, Excel</p>
 
         <p class="report-note">
-            <em>
-                This video demonstrates dashboard interactivity, filtering, and analytical capability.
-                Live report access is restricted due to organizational security policies.
-            </em>
+          <em>
+            This video demonstrates dashboard interactivity, filtering, and analytical capability.
+            Live report access is restricted due to organizational security policies.
+          </em>
         </p>
-    </div>
+      </div>
 
-    <!-- TABLEAU PLACEHOLDER -->
- <!-- //  <div class="report-box">
+      <!-- Tableau placeholder (kept correctly commented) -->
+      <!--
+      <div class="report-box">
         <h3>Tableau Dashboard</h3>
-        <p>
-            Tableau Public dashboards showcasing data visualization and
-            analytical insights will be added here.
-        </p>
-    </div>
-</section>
+        <p>Tableau Public dashboards showcasing data visualization and analytical insights will be added here.</p>
+      </div>
+      -->
+    </section>
 
+    <!-- =========================
+         CONTACT
+         ========================= -->
+    <section id="contact" class="section fade-in">
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <h2>Contact</h2>
 
-<!-- =========================
-     CONTACT
-     ========================= -->
-<section id="contact" class="section fade-in">
-  <div class="contact-wrap">
-    <div class="contact-info">
-      <h2>Contact</h2>
+          <p>Email: <strong>anupama.sachinp@gmail.com</strong></p>
 
-      <p>Email: <strong>anupama.sachinp@gmail.com</strong></p>
+          <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/anupama-sachin" target="_blank" rel="noopener noreferrer">
+              www.linkedin.com/in/anupama-sachin
+            </a>
+          </p>
 
-      <p>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/anupama-sachin" target="_blank" rel="noopener">
-          www.linkedin.com/in/anupama-sachin
+          <p>Phone: +94 71 067 5067</p>
+        </div>
+
+        <a
+          class="whatsapp-inline"
+          href="https://wa.me/94710675067?text=Hi%20Anupama%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
+          title="Chat on WhatsApp"
+        >
+          <span class="wa-icon">💬</span>
+          <span class="wa-text">WhatsApp</span>
         </a>
-      </p>
+      </div>
+    </section>
 
-      <p>Phone: +94 71 067 5067</p>
-    </div>
+  </main>
 
-    <a
-      class="whatsapp-inline"
-      href="https://wa.me/94710675067?text=Hi%20Anupama%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
-      target="_blank"
-      rel="noopener"
-      aria-label="Chat on WhatsApp"
-      title="Chat on WhatsApp"
-    >
-      <span class="wa-icon">💬</span>
-      <span class="wa-text">WhatsApp</span>
-    </a>
-  </div>
-</section>
-
-
-<!-- =========================
-     FOOTER
-     ========================= -->
-<footer>
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer>
     <p>© 2025 Anupama Sachin | Portfolio</p>
-</footer>
+  </footer>
 
-<!-- =========================
-     FLOATING WHATSAPP BUTTON
-     ========================= -->
-<a
-  class="whatsapp-float"
-   href="https://wa.me/94710675067?text=Hi%20Anupama%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
-   target="_blank"
-   rel="noopener"
-   aria-label="Chat on WhatsApp">
-   <span class="wa-icon">💬</span>
-  
-</a>
+  <!-- =========================
+       FLOATING WHATSAPP BUTTON
+       ========================= -->
+ <!-- <a
+    class="whatsapp-float"
+    href="https://wa.me/94710675067?text=Hi%20Anupama%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+    title="Chat on WhatsApp"
+  >
+    <span class="wa-icon">💬</span>
+  </a>-->
 
 </body>
 </html>
