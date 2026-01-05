@@ -229,6 +229,28 @@ nav ul li a:hover {
 }
 
 /* =========================
+   RESPONSIVE EMBED (Video / YouTube / Drive)
+   ========================= */
+.embed-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+    border-radius: 14px;
+    overflow: hidden;
+    background: #0b1220;
+    margin-top: 12px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+}
+
+.embed-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* =========================
    IMAGE CAROUSEL (Reports)
    ========================= */
 .carousel {
@@ -377,6 +399,7 @@ footer {
         align-items: flex-start;
     }
 }
+
 /* =========================
    HERO SKILLS TICKER (Responsive + Pause on Hover)
    ========================= */
@@ -397,10 +420,10 @@ footer {
     display: flex;
     align-items: center;
     gap: 12px;
-    width: max-content;          /* makes it fit all items */
+    width: max-content;
     padding-left: 18px;
     animation: tickerMove 22s linear infinite;
-    will-change: transform;      /* smoother animation */
+    will-change: transform;
 }
 
 /* Pause when user hovers anywhere on ticker */
