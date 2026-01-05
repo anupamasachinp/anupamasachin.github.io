@@ -11,11 +11,47 @@
     font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
+/* GLOBAL MEDIA SAFETY */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* BODY */
 body {
     background: #F8FAFC;
     color: #1E293B;
     line-height: 1.6;
+}
+
+/* Prevent fixed header overlap */
+main { padding-top: 92px; }
+@media (max-width: 768px) { main { padding-top: 76px; } }
+
+/* Smooth anchor jumping with fixed header */
+section { scroll-margin-top: 92px; }
+@media (max-width: 768px) { section { scroll-margin-top: 76px; } }
+
+/* Accessibility: Skip link */
+.skip-link{
+    position:absolute;
+    left:-999px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+.skip-link:focus{
+    left:16px;
+    top:16px;
+    width:auto;
+    height:auto;
+    padding:10px 12px;
+    background:#fff;
+    z-index:9999;
+    border-radius:10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 /* =========================================================
@@ -32,44 +68,72 @@ header {
     z-index: 100;
 }
 
-nav {
+/* Updated to support .nav wrapper from new HTML */
+nav, .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* needed for mobile dropdown menu */
 }
 
-nav .logo {
+nav .logo, .nav .logo {
     font-size: 22px;
     font-weight: 800;
     letter-spacing: 0.5px;
 }
 
-nav .logo span {
+nav .logo span, .nav .logo span {
     color: #2563EB;
 }
 
-nav ul {
+/* Updated UL selector to support .nav-menu */
+nav ul, .nav-menu {
     list-style: none;
     display: flex;
     gap: 28px;
 }
 
-nav ul li a {
+/* Updated link selector */
+nav ul li a, .nav-menu li a {
     text-decoration: none;
     color: #1E293B;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, .nav-menu li a:hover {
     color: #2563EB;
+}
+
+/* =========================
+   HAMBURGER BUTTON (mobile)
+   ========================= */
+.nav-toggle{
+    display:none;
+    background:transparent;
+    border:0;
+    cursor:pointer;
+    padding:10px;
+    border-radius: 12px;
+}
+.nav-toggle:focus-visible{
+    outline: 3px solid rgba(37, 99, 235, 0.35);
+    outline-offset: 3px;
+}
+.nav-toggle .bar{
+    display:block;
+    width:26px;
+    height:2px;
+    margin:6px 0;
+    background:#1E293B;
+    border-radius: 999px;
 }
 
 /* =========================================================
    HERO SECTION
    ========================================================= */
 .hero {
-    height: 100vh;
+    min-height: calc(100vh - 92px); /* better than height:100vh with fixed header */
     background: linear-gradient(135deg, #0F172A, #1E3A8A, #2563EB);
     display: flex;
     justify-content: center;
@@ -90,7 +154,7 @@ nav ul li a:hover {
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid rgba(255,255,255,0.95);
-    margin-bottom: 22px;
+    margin: 0 auto 22px;
     box-shadow: 0 18px 40px rgba(0,0,0,0.35);
 }
 
@@ -190,6 +254,7 @@ nav ul li a:hover {
     padding: 26px;
     border-radius: 16px;
     border-left: 6px solid #2563EB;
+    margin-bottom: 18px;
 }
 
 /* =========================================================
@@ -287,6 +352,7 @@ nav ul li a:hover {
     font-weight: 800;
     cursor: pointer;
     transition: all 0.2s ease;
+    touch-action: manipulation;
 }
 
 .carousel-btn:hover {
@@ -328,6 +394,7 @@ nav ul li a:hover {
     background: #CBD5E1;
     cursor: pointer;
     transition: all 0.2s ease;
+    touch-action: manipulation;
 }
 
 .dot.active {
@@ -352,6 +419,7 @@ nav ul li a:hover {
 #contact p {
     margin-bottom: 10px;
     font-size: 16px;
+    word-break: break-word; /* prevent overflow on small screens */
 }
 
 #contact a {
@@ -395,6 +463,25 @@ nav ul li a:hover {
     line-height: 1;
 }
 
+/* Floating WhatsApp button (if you already have styles, this safely complements) */
+.whatsapp-float{
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 16px 36px rgba(0,0,0,0.22);
+    z-index: 120;
+}
+.whatsapp-float:hover{ transform: translateY(-2px); }
+.whatsapp-float .wa-icon{ font-size: 22px; }
+
 /* =========================================================
    FOOTER
    ========================================================= */
@@ -418,40 +505,6 @@ footer {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 38px;
-    }
-
-    .section {
-        padding: 45px;
-    }
-
-    nav ul {
-        gap: 16px;
-    }
-
-    .carousel-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    /* Contact: stack on mobile */
-    .contact-wrap {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .whatsapp-inline {
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-    }
 }
 
 /* =========================
@@ -513,8 +566,131 @@ footer {
     to   { transform: translateX(-50%); }
 }
 
-/* Mobile: slightly smaller pills */
+/* =========================================================
+   RESPONSIVE (UPDATED FOR REAL MOBILE)
+   ========================================================= */
+@media (max-width: 768px) {
+
+    /* Header spacing */
+    header {
+        padding: 14px 16px;
+    }
+
+    /* Turn on hamburger */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Mobile menu dropdown */
+    .nav-menu{
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: 64px;
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px;
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+    }
+    .nav-menu.open{
+        display: flex;
+    }
+
+    /* Bigger tap targets */
+    .nav-menu a{
+        padding: 10px 12px;
+        border-radius: 12px;
+    }
+    .nav-menu a:hover{
+        background: rgba(37, 99, 235, 0.08);
+    }
+
+    /* Hero scaling */
+    .hero {
+        padding: 54px 16px;
+        min-height: calc(100vh - 76px);
+    }
+
+    .profile-photo{
+        width: 135px;
+        height: 135px;
+        margin-bottom: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(28px, 7vw, 40px);
+    }
+
+    .hero-content h3 {
+        font-size: clamp(14px, 3.8vw, 18px);
+    }
+
+    .hero-content p{
+        font-size: 14px;
+    }
+
+    /* Section padding smaller */
+    .section {
+        width: min(1150px, 92%);
+        padding: 26px;
+        margin: 60px auto;
+    }
+
+    .section h2{
+        font-size: 26px;
+        margin-bottom: 18px;
+    }
+
+    /* Skills grid -> 1 column on small phones, 2 columns on larger phones */
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    /* Cards spacing */
+    .experience-box,
+    .project-card,
+    .report-box{
+        padding: 18px;
+    }
+
+    .carousel-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Contact: stack on mobile */
+    .contact-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .whatsapp-inline {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    /* Floating whatsapp */
+    .whatsapp-float{
+        bottom: 18px;
+        right: 18px;
+        width: 52px;
+        height: 52px;
+    }
+}
+
+/* Small phones */
 @media (max-width: 480px) {
+    /* skills -> single column */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
     .ticker-track span {
         font-size: 12px;
         padding: 7px 12px;
@@ -524,4 +700,5 @@ footer {
 /* accessibility: stop animation if user prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
     .ticker-track { animation: none; }
+    .fade-in { transition: none; }
 }
