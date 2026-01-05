@@ -354,6 +354,56 @@ nav ul li a:hover {
 }
 
 /* =========================================================
+   FLOATING WHATSAPP BUTTON (FIXED + MODERN)
+   ========================================================= */
+.whatsapp-float {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 16px 35px rgba(0,0,0,0.28);
+    z-index: 9999;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.33);
+    background: #1EBE57;
+}
+
+.whatsapp-float:active {
+    transform: translateY(-1px);
+}
+
+.wa-icon {
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+/* Mobile safe spacing */
+@media (max-width: 480px) {
+    .whatsapp-float {
+        right: 14px;
+        bottom: 14px;
+        width: 52px;
+        height: 52px;
+    }
+    .wa-icon {
+        font-size: 20px;
+    }
+}
+
+/* =========================================================
    FOOTER
    ========================================================= */
 footer {
