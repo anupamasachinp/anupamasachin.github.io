@@ -57,12 +57,13 @@
     <section class="hero">
       <!-- ✅ Math symbols “snow” canvas (only inside hero) -->
       <canvas id="mathSnow" aria-hidden="true"></canvas>
+
       <div class="hero-content fade-in">
 
-        <!-- PROFILE PHOTO -->
-        <img src="./assete/profile.jpg" class="profile-photo" alt="Anupama Sachin" loading="lazy">
+        <!-- PROFILE PHOTO (keep eager so it appears instantly in hero) -->
+        <img src="./assete/profile.jpg" class="profile-photo" alt="Anupama Sachin" loading="eager" decoding="async">
 
-        <h1>Hello, I'm <span> Sachin</span></h1>
+        <h1>Hello, I'm <span>Sachin</span></h1>
         <h3>Power BI Developer • Analyst • Power Apps Developer</h3>
         <p>MSc (Business Analytics) | BSc (Applied Sciences)</p>
 
@@ -142,10 +143,8 @@
       <h2>Experience</h2>
 
       <div class="experience-box">
-        <h3>Data Analyst – Hitachi Digital Payment Solutions <span style="font-weight:400;">( 2021 – Present )</span></h3>
-
+        <h3>Data Analyst – Hitachi Digital Payment Solutions <span style="font-weight:400;">(2021 – Present)</span></h3>
         <p><strong>Tools Used:</strong> Power BI, Power Query, DAX, Microsoft SharePoint, Excel</p>
-
         <ul>
           <li>Designed and developed interactive <strong>Power BI dashboards</strong> to monitor daily operational tasks and provide weekly updates on departmental performance.</li>
           <li>Automated weekly operational reporting, streamlining task completion analysis and improving visibility of performance trends throughout the year.</li>
@@ -157,10 +156,8 @@
 
       <div class="experience-box">
         <h3>Executive – Novus Technologies Pte Ltd <span style="font-weight:400;">(2018 – 2020)</span></h3>
-
         <p><strong>Projects:</strong> DFCC Bank (ATM / CRM), Peoples Bank (ATM / CRM)</p>
         <p><strong>Tools Used:</strong> Advanced Excel, Power Query</p>
-
         <ul>
           <li>Developed and maintained <strong>Excel dashboards</strong> to monitor supplier operations and service quality, improving operational visibility for banking clients.</li>
           <li>Created <strong>ATM and CRM reconciliation models</strong> using Excel and Power Query, enhancing reconciliation accuracy and streamlining operational processes.</li>
@@ -172,9 +169,7 @@
 
       <div class="experience-box">
         <h3>Implant Trainee – MAS Linea AQUA (Sourcing & Supply Chain) <span style="font-weight:400;">(2017 – 2018)</span></h3>
-
         <p><strong>Tools Used:</strong> Advanced Excel, Visio</p>
-
         <ul>
           <li>Created <strong>Excel-based purchasing order tracking modules</strong> using conditional formatting, data validation, and advanced formulas to ensure real-time status updates and data accuracy.</li>
           <li>Assisted in <strong>process improvement initiatives</strong> by implementing and modifying process maps, identifying operational gaps, and supporting daily workflow optimization.</li>
@@ -197,47 +192,37 @@
 
       <div class="project-card">
         <h3>Sales Dashboard (Kaggle Dataset)</h3>
-
         <p>Designed and developed a <strong>Power BI sales dashboard</strong> using a Kaggle dataset to analyze store operations and business performance.</p>
-
         <ul>
           <li><strong>Overview:</strong> Key sales metrics and overall performance trends</li>
           <li><strong>Product Analysis:</strong> Performance by product category and top-selling items</li>
           <li><strong>Geo Analysis:</strong> Sales distribution across countries and regions</li>
         </ul>
-
         <p>Demonstrated the ability to handle large datasets and derive actionable insights through effective <strong>data visualization</strong>.</p>
         <p><strong>Technologies:</strong> Power BI, Power Query, DAX, Excel</p>
-
         <p>
           🔗 <a
             href="https://app.powerbi.com/view?r=eyJrIjoiMGU1ZjY4ZmItZmJiOS00MjljLWExMGQtZTFhYzNhNTRjNDM2IiwidCI6ImYzZmMyY2Y5LWUzMTItNDBmOS1hNDQ4LTkyMWJjNmZhMmViYSIsImMiOjEwfQ%3D%3D&pageName=88c4048e3cc14a9dabd8"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            View Power BI Dashboard
-          </a>
+          >View Power BI Dashboard</a>
         </p>
       </div>
 
       <div class="project-card">
         <h3>ATM Booth Inspection & Reporting System (Power Apps)</h3>
-
         <p>
           Designed and implemented an <strong>end-to-end digital inspection and reporting system</strong>
           using the Microsoft Power Platform to capture, track, and report ATM booth inspection data
           in real time, improving operational visibility and response times.
         </p>
-
         <p><strong>Solution Architecture:</strong><br>Power Apps → SharePoint Lists → Power Automate → Excel Online</p>
-
         <ul>
           <li>Developed a <strong>mobile-friendly Power Apps application</strong> to record ATM booth inspection details, defects, and observations directly from the field.</li>
           <li>Used <strong>SharePoint Lists</strong> as a centralized and secure data repository to maintain data consistency, version control, and access management.</li>
           <li>Implemented <strong>Power Automate workflows</strong> to trigger instant notifications and reports to relevant teams upon inspection submission.</li>
           <li>Integrated inspection data with <strong>Excel Online</strong> to support structured reporting, tracking, and historical analysis.</li>
         </ul>
-
         <p><strong>Business Impact:</strong></p>
         <ul>
           <li>Reduced inspection reporting time by <strong>over 50%</strong> by eliminating manual reporting.</li>
@@ -245,7 +230,6 @@
           <li>Enabled <strong>real-time visibility</strong> of inspection outcomes for faster decision-making.</li>
           <li>Enhanced operational efficiency and accountability across ATM maintenance activities.</li>
         </ul>
-
         <p><strong>Technologies:</strong> Power Apps, Power Automate, SharePoint Lists, Excel Online</p>
       </div>
     </section>
@@ -258,7 +242,6 @@
 
       <div class="report-box">
         <h3>Tourist Arrivals Dashboard (Power BI)</h3>
-
         <p>
           Power BI dashboard developed to analyze tourism arrival trends,
           seasonal patterns, and geographical distribution. The report
@@ -269,7 +252,6 @@
         <div class="carousel" data-carousel="tourism">
           <div class="carousel-header">
             <h4 id="tourism-caption">Overview</h4>
-
             <div class="carousel-controls">
               <button class="carousel-btn" type="button" data-prev="tourism">‹</button>
               <button class="carousel-btn" type="button" data-next="tourism">›</button>
@@ -298,7 +280,6 @@
 
       <div class="report-box">
         <h3>Global Superstore Summary Dashboard (Power BI)</h3>
-
         <p>
           This project presents an executive-level Power BI dashboard built using the
           Global Superstore dataset. The dashboard provides a comprehensive overview
@@ -391,10 +372,9 @@
     <p>© 2025 Anupama Sachin | Portfolio</p>
   </footer>
 
-  <!-- =========================
-       FLOATING WHATSAPP BUTTON
-       ========================= -->
- <!-- <a
+  <!-- Floating WhatsApp button (optional) -->
+  <!--
+  <a
     class="whatsapp-float"
     href="https://wa.me/94710675067?text=Hi%20Anupama%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
     target="_blank"
@@ -403,7 +383,8 @@
     title="Chat on WhatsApp"
   >
     <span class="wa-icon">💬</span>
-  </a>-->
+  </a>
+  -->
 
 </body>
 </html>
