@@ -130,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let endX = 0;
     const threshold = 45; // swipe distance px
 
-    // Touch events (mobile)
     track.addEventListener(
       "touchstart",
       (e) => {
@@ -147,7 +146,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (Math.abs(diff) < threshold) return;
 
-        // swipe left -> next, swipe right -> prev
         if (diff < 0) setSlide(carouselId, getIndex(carouselId) + 1);
         else setSlide(carouselId, getIndex(carouselId) - 1);
       },
@@ -155,13 +153,11 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  // Initialize carousel when page loads
   window.addEventListener("load", () => {
     setSlide("tourism", 0);
     addSwipe("tourism");
   });
 
-  // Handle next/prev/dots clicks
   document.addEventListener("click", (e) => {
     const prevBtn = e.target.closest("[data-prev]");
     const nextBtn = e.target.closest("[data-next]");
@@ -184,3 +180,133 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 })();
+
+// ===============================
+// Math Symbols Snow (Hero only) - Premium Glow Version
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+  const canvas = document.getElementById("mathSnow");
+  const hero = document.querySelector(".hero");
+  if (!canvas || !hero) return;
+
+  // Respect reduced motion settings
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return;
+
+  const ctx = canvas.getContext("2d");
+
+  const symbols = [
+    "∑","∫","π","∞","√","≈","≠","≤","≥","÷","×","+","−","=",
+    "∂","θ","λ","μ","σ","Δ","∈","∩","∪","→","∇","α","β","γ"
+  ];
+
+  let w = 0, h = 0, dpr = 1;
+  let particles = [];
+  let lastTime = 0;
+
+  const rand = (min, max) => Math.random() * (max - min) + min;
+  const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+  function resize() {
+    const rect = hero.getBoundingClientRect();
+    w = Math.max(1, Math.floor(rect.width));
+    h = Math.max(1, Math.floor(rect.height));
+
+    dpr = Math.min(window.devicePixelRatio || 1, 2); // cap for performance
+    canvas.width = Math.floor(w * dpr);
+    canvas.height = Math.floor(h * dpr);
+    canvas.style.width = w + "px";
+    canvas.style.height = h + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    // density (lower = more symbols)
+    const targetCount = Math.floor((w * h) / 17000);
+    const count = Math.max(22, Math.min(95, targetCount));
+
+    particles = Array.from({ length: count }, () => makeParticle(true));
+  }
+
+  function makeParticle(randomY = false) {
+    return {
+      x: rand(0, w),
+      y: randomY ? rand(-h, h) : rand(-60, -10),
+      vy: rand(22, 60),
+      baseVx: rand(-6, 6),
+      waveAmp: rand(6, 22),
+      waveFreq: rand(0.6, 1.6),
+      wavePhase: rand(0, Math.PI * 2),
+      size: rand(12, 22),
+      rot: rand(0, Math.PI * 2),
+      rotSpeed: rand(-0.7, 0.7),
+      alpha: rand(0.25, 0.85),
+      char: pick(symbols),
+      blur: rand(0, 0.8),
+      flicker: rand(0.4, 1.1),
+    };
+  }
+
+  function draw(t, dt) {
+    ctx.clearRect(0, 0, w, h);
+
+    for (const p of particles) {
+      p.y += p.vy * dt;
+
+      const wave = Math.sin((t / 1000) * p.waveFreq + p.wavePhase) * p.waveAmp;
+      p.x += (p.baseVx * dt) + (wave * dt * 0.7);
+      p.rot += p.rotSpeed * dt;
+
+      // fade in/out
+      const fadeInZone = 90;
+      const fadeOutZone = 140;
+      let fade = 1;
+
+      if (p.y < fadeInZone) fade = Math.max(0, p.y / fadeInZone);
+      if (p.y > h - fadeOutZone) fade = Math.max(0, (h - p.y) / fadeOutZone);
+
+      // twinkle
+      const tw = 0.85 + 0.15 * Math.sin((t / 1000) * p.flicker + p.wavePhase);
+
+      // respawn
+      if (p.y > h + 50) Object.assign(p, makeParticle(false));
+      if (p.x < -60) p.x = w + 60;
+      if (p.x > w + 60) p.x = -60;
+
+      ctx.save();
+      ctx.globalAlpha = p.alpha * fade * tw;
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+
+      ctx.font = `800 ${p.size}px Inter, Segoe UI, sans-serif`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+      // glow layer
+      ctx.shadowColor = "rgba(255,255,255,0.55)";
+      ctx.shadowBlur = 10 + p.blur * 6;
+
+      ctx.fillStyle = "rgba(255,255,255,0.95)";
+      ctx.fillText(p.char, 0, 0);
+
+      // subtle depth
+      ctx.shadowBlur = 0;
+      ctx.fillStyle = "rgba(224,242,254,0.70)";
+      ctx.fillText(p.char, 0.7, 0.7);
+
+      ctx.restore();
+    }
+  }
+
+  function animate(t) {
+    if (!lastTime) lastTime = t;
+    const dt = Math.min((t - lastTime) / 1000, 0.033);
+    lastTime = t;
+
+    draw(t, dt);
+    requestAnimationFrame(animate);
+  }
+
+  resize();
+  requestAnimationFrame(animate);
+
+  window.addEventListener("resize", resize, { passive: true });
+});
