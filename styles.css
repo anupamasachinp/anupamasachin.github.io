@@ -186,13 +186,13 @@ nav ul li a:hover, .nav-menu li a:hover {
   justify-content: flex-end;
 }
 
-/* profile photo (single source of truth) */
+/* ✅ FIXED: PERFECT CIRCLE PROFILE PHOTO */
 .profile-photo{
   width: min(240px, 38vw);
   height: min(240px, 38vw);
   object-fit: cover;
-  border-radius: 50px; /* change to 50% if you want circle */
-  border: 2px solid rgba(255,255,255,0.35);
+  border-radius: 50%; /* ✅ circle */
+  border: 4px solid rgba(255,255,255,0.85);
   box-shadow: 0 18px 55px rgba(2,6,23,.22);
 }
 
@@ -215,7 +215,7 @@ nav ul li a:hover, .nav-menu li a:hover {
   opacity: 0.9;
 }
 
-/* CTA button (single definition) */
+/* CTA button */
 .btn-primary{
   display: inline-block;
   margin-top: 16px;
@@ -238,7 +238,7 @@ nav ul li a:hover, .nav-menu li a:hover {
    HERO SKILLS TICKER (Responsive + Pause on Hover)
    ========================================================= */
 .skills-ticker {
-  margin: 18px 0 0;       /* left-aligned in hero */
+  margin: 18px 0 0;
   width: 100%;
   max-width: 900px;
   overflow: hidden;
@@ -603,10 +603,8 @@ footer {
   }
   .nav-menu a:hover{ background: rgba(37, 99, 235, 0.08); }
 
-  /* ✅ Keep hero layout consistent, but stack */
-  .hero{
-    padding: 10px 16px;
-  }
+  /* Stack hero on mobile */
+  .hero{ padding: 10px 16px; }
 
   .hero-grid{
     grid-template-columns: 1fr;
@@ -624,10 +622,11 @@ footer {
     order: -1;
   }
 
+  /* ✅ FIXED: circle on mobile too */
   .profile-photo{
     width: 170px;
     height: 170px;
-    border-radius: 18px;
+    border-radius: 50%;
   }
 
   .hero-content p { font-size: 14px; }
