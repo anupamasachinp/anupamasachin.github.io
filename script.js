@@ -300,4 +300,72 @@ document.addEventListener("DOMContentLoaded", () => {
       window.addEventListener("resize", resize, { passive: true });
     }
   }
+
+  // ------------------------------------------------------------
+  // 5) Hero Typing Effect (auto type + delete + next)
+  // ------------------------------------------------------------
+  const typedTextEl = document.getElementById("typed-text");
+  const cursorEl = document.querySelector(".cursor");
+
+  if (typedTextEl) {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // You can edit these titles anytime:
+    const roles = [
+      "Power BI Developer",
+      "Business Analyst",
+      "Power Apps Developer",
+      "Data Analyst"
+    ];
+
+    // If user prefers reduced motion, show a static title and stop.
+    if (reduceMotion) {
+      typedTextEl.textContent = roles[0];
+      if (cursorEl) cursorEl.style.display = "none";
+      return;
+    }
+
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    const TYPE_SPEED = 95;       // typing speed
+    const DELETE_SPEED = 55;     // deleting speed
+    const END_PAUSE = 1100;      // pause when word completed
+    const START_PAUSE = 250;     // pause before typing next word
+
+    function tick() {
+      const full = roles[roleIndex];
+
+      if (!isDeleting) {
+        charIndex++;
+        typedTextEl.textContent = full.slice(0, charIndex);
+
+        if (charIndex === full.length) {
+          // pause then start deleting
+          isDeleting = true;
+          setTimeout(tick, END_PAUSE);
+          return;
+        }
+
+        setTimeout(tick, TYPE_SPEED);
+      } else {
+        charIndex--;
+        typedTextEl.textContent = full.slice(0, Math.max(0, charIndex));
+
+        if (charIndex <= 0) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(tick, START_PAUSE);
+          return;
+        }
+
+        setTimeout(tick, DELETE_SPEED);
+      }
+    }
+
+    // Start with whatever is in HTML, or start clean
+    typedTextEl.textContent = "";
+    tick();
+  }
 });
