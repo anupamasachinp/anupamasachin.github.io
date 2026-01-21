@@ -191,7 +191,7 @@ nav ul li a:hover, .nav-menu li a:hover {
   width: min(240px, 38vw);
   height: min(240px, 38vw);
   object-fit: cover;
-  border-radius: 22px; /* change to 50% if you want circle */
+  border-radius: 50px; /* change to 50% if you want circle */
   border: 2px solid rgba(255,255,255,0.35);
   box-shadow: 0 18px 55px rgba(2,6,23,.22);
 }
