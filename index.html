@@ -51,64 +51,74 @@
 
   <main>
 
-  <!-- =========================
-     HERO SECTION
-     ========================= -->
-<section class="hero">
-  <canvas id="mathSnow" aria-hidden="true"></canvas>
+    <!-- =========================
+         HERO SECTION
+         ========================= -->
+    <section class="hero" id="top">
+      <canvas id="mathSnow" aria-hidden="true"></canvas>
 
-  <div class="hero-content fade-in">
-    <div class="hero-grid">
+      <div class="hero-content fade-in">
+        <div class="hero-grid">
 
-      <!-- LEFT: TEXT -->
-      <div class="hero-left">
-        <h1>Hello, I'm <span>Sachin</span></h1>
-        <h3>Power BI Developer • Analyst • Power Apps Developer</h3>
-        <p>MSc (Business Analytics) | BSc (Applied Sciences)</p>
+          <!-- LEFT: TEXT -->
+          <div class="hero-left">
+            <h1>Hello, I'm <span>Sachin</span></h1>
 
-        <a href="#contact" class="btn-primary">Contact Me</a>
+            <!-- ✅ NEW: Typing line (JS will fill #typed-text) -->
+            <h3 class="typing-line" aria-label="Professional roles">
+              <span id="typed-text">Power BI Developer</span>
+              <span class="cursor" aria-hidden="true">|</span>
+            </h3>
 
-        <div class="skills-ticker" aria-label="Key skills scrolling list">
-          <div class="ticker-track">
-            <span>Power BI</span>
-            <span>DAX</span>
-            <span>SQL</span>
-            <span>Power Query</span>
-            <span>Excel (Advanced)</span>
-            <span>Power Apps</span>
-            <span>Power Automate</span>
-            <span>Data Modelling</span>
-            <span>Dashboard Design</span>
-            <span>Python</span>
-            <span>R</span>
+            <p>MSc (Business Analytics) | BSc (Applied Sciences)</p>
 
-            <span aria-hidden="true">Power BI</span>
-            <span aria-hidden="true">DAX</span>
-            <span aria-hidden="true">SQL</span>
-            <span aria-hidden="true">Power Query</span>
-            <span aria-hidden="true">Excel (Advanced)</span>
-            <span aria-hidden="true">Power Apps</span>
-            <span aria-hidden="true">Power Automate</span>
-            <span aria-hidden="true">Data Modelling</span>
-            <span aria-hidden="true">Dashboard Design</span>
-            <span aria-hidden="true">Python</span>
-            <span aria-hidden="true">R</span>
+            <a href="#contact" class="btn-primary">Contact Me</a>
+
+            <div class="skills-ticker" aria-label="Key skills scrolling list">
+              <div class="ticker-track">
+                <span>Power BI</span>
+                <span>DAX</span>
+                <span>SQL</span>
+                <span>Power Query</span>
+                <span>Excel (Advanced)</span>
+                <span>Power Apps</span>
+                <span>Power Automate</span>
+                <span>Data Modelling</span>
+                <span>Dashboard Design</span>
+                <span>Python</span>
+                <span>R</span>
+
+                <!-- duplicate for infinite loop -->
+                <span aria-hidden="true">Power BI</span>
+                <span aria-hidden="true">DAX</span>
+                <span aria-hidden="true">SQL</span>
+                <span aria-hidden="true">Power Query</span>
+                <span aria-hidden="true">Excel (Advanced)</span>
+                <span aria-hidden="true">Power Apps</span>
+                <span aria-hidden="true">Power Automate</span>
+                <span aria-hidden="true">Data Modelling</span>
+                <span aria-hidden="true">Dashboard Design</span>
+                <span aria-hidden="true">Python</span>
+                <span aria-hidden="true">R</span>
+              </div>
+            </div>
           </div>
+
+          <!-- RIGHT: PHOTO -->
+          <div class="hero-right">
+            <div class="profile-wrap">
+              <img
+                src="./assete/profile.jpg"
+                alt="Anupama Sachin"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <!-- RIGHT: PHOTO -->
-      <div class="hero-right">
-        <img src="./assete/profile.jpg"
-             class="profile-photo"
-             alt="Anupama Sachin"
-             loading="eager"
-             decoding="async">
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- =========================
          ABOUT
@@ -201,44 +211,7 @@
       <div class="project-card">
         <h3>Sales Dashboard (Kaggle Dataset)</h3>
         <p>Designed and developed a <strong>Power BI sales dashboard</strong> using a Kaggle dataset to analyze store operations and business performance.</p>
-        <ul>
-          <li><strong>Overview:</strong> Key sales metrics and overall performance trends</li>
-          <li><strong>Product Analysis:</strong> Performance by product category and top-selling items</li>
-          <li><strong>Geo Analysis:</strong> Sales distribution across countries and regions</li>
-        </ul>
-        <p>Demonstrated the ability to handle large datasets and derive actionable insights through effective <strong>data visualization</strong>.</p>
         <p><strong>Technologies:</strong> Power BI, Power Query, DAX, Excel</p>
-        <p>
-          🔗 <a
-            href="https://app.powerbi.com/view?r=eyJrIjoiMGU1ZjY4ZmItZmJiOS00MjljLWExMGQtZTFhYzNhNTRjNDM2IiwidCI6ImYzZmMyY2Y5LWUzMTItNDBmOS1hNDQ4LTkyMWJjNmZhMmViYSIsImMiOjEwfQ%3D%3D&pageName=88c4048e3cc14a9dabd8"
-            target="_blank"
-            rel="noopener noreferrer"
-          >View Power BI Dashboard</a>
-        </p>
-      </div>
-
-      <div class="project-card">
-        <h3>ATM Booth Inspection & Reporting System (Power Apps)</h3>
-        <p>
-          Designed and implemented an <strong>end-to-end digital inspection and reporting system</strong>
-          using the Microsoft Power Platform to capture, track, and report ATM booth inspection data
-          in real time, improving operational visibility and response times.
-        </p>
-        <p><strong>Solution Architecture:</strong><br>Power Apps → SharePoint Lists → Power Automate → Excel Online</p>
-        <ul>
-          <li>Developed a <strong>mobile-friendly Power Apps application</strong> to record ATM booth inspection details, defects, and observations directly from the field.</li>
-          <li>Used <strong>SharePoint Lists</strong> as a centralized and secure data repository to maintain data consistency, version control, and access management.</li>
-          <li>Implemented <strong>Power Automate workflows</strong> to trigger instant notifications and reports to relevant teams upon inspection submission.</li>
-          <li>Integrated inspection data with <strong>Excel Online</strong> to support structured reporting, tracking, and historical analysis.</li>
-        </ul>
-        <p><strong>Business Impact:</strong></p>
-        <ul>
-          <li>Reduced inspection reporting time by <strong>over 50%</strong> by eliminating manual reporting.</li>
-          <li>Improved data accuracy and consistency by using standardized digital forms.</li>
-          <li>Enabled <strong>real-time visibility</strong> of inspection outcomes for faster decision-making.</li>
-          <li>Enhanced operational efficiency and accountability across ATM maintenance activities.</li>
-        </ul>
-        <p><strong>Technologies:</strong> Power Apps, Power Automate, SharePoint Lists, Excel Online</p>
       </div>
     </section>
 
@@ -249,59 +222,7 @@
       <h2>Reports</h2>
 
       <div class="report-box">
-        <h3>Tourist Arrivals Dashboard (Power BI)</h3>
-        <p>
-          Power BI dashboard developed to analyze tourism arrival trends,
-          seasonal patterns, and geographical distribution. The report
-          supports data-driven decision-making through interactive visuals
-          and KPI tracking.
-        </p>
-
-        <div class="carousel" data-carousel="tourism">
-          <div class="carousel-header">
-            <h4 id="tourism-caption">Overview</h4>
-            <div class="carousel-controls">
-              <button class="carousel-btn" type="button" data-prev="tourism">‹</button>
-              <button class="carousel-btn" type="button" data-next="tourism">›</button>
-            </div>
-          </div>
-
-          <div class="carousel-track">
-            <img src="./assete/tourism-overview.png" alt="Tourism Dashboard Overview" class="carousel-img active" data-caption="Overview" loading="lazy">
-            <img src="./assete/tourism-det.png" alt="Tourism Dashboard Detailed Analysis" class="carousel-img" data-caption="Detailed Analysis" loading="lazy">
-            <img src="./assete/tourism-geo.png" alt="Tourism Dashboard Geo Analysis" class="carousel-img" data-caption="Geographical Analysis" loading="lazy">
-          </div>
-
-          <div class="carousel-dots" aria-label="Carousel navigation">
-            <button class="dot active" type="button" data-dot="tourism" data-index="0" aria-label="Overview"></button>
-            <button class="dot" type="button" data-dot="tourism" data-index="1" aria-label="Detailed Analysis"></button>
-            <button class="dot" type="button" data-dot="tourism" data-index="2" aria-label="Geographical Analysis"></button>
-          </div>
-        </div>
-
-        <p><strong>Technologies:</strong> Power BI, Power Query, DAX, Excel</p>
-
-        <p class="report-note">
-          <em>Live interactive demo available upon request due to organizational security restrictions.</em>
-        </p>
-      </div>
-
-      <div class="report-box">
         <h3>Global Superstore Summary Dashboard (Power BI)</h3>
-        <p>
-          This project presents an executive-level Power BI dashboard built using the
-          Global Superstore dataset. The dashboard provides a comprehensive overview
-          of business performance across regions, categories, and time periods,
-          supporting strategic and operational decision-making.
-        </p>
-
-        <p>
-          Key insights include total sales, profit, discount impact, regional performance,
-          category-wise analysis, and monthly sales and profit trends with interactive
-          filtering.
-        </p>
-
-        <h4>Dashboard Walkthrough (Video)</h4>
 
         <div class="embed-container">
           <iframe
@@ -312,29 +233,10 @@
           ></iframe>
         </div>
 
-        <p>
-          <strong>Key Features:</strong>
-          KPI cards, profit &amp; sales comparison by region, category-level performance analysis,
-          monthly trend analysis, and interactive slicers for year and quarter selection.
-        </p>
-
-        <p><strong>Technologies:</strong> Power BI, Power Query, DAX, Excel</p>
-
         <p class="report-note">
-          <em>
-            This video demonstrates dashboard interactivity, filtering, and analytical capability.
-            Live report access is restricted due to organizational security policies.
-          </em>
+          <em>Live report access is restricted due to organizational security policies.</em>
         </p>
       </div>
-
-      <!-- Tableau placeholder (kept correctly commented) -->
-      <!--
-      <div class="report-box">
-        <h3>Tableau Dashboard</h3>
-        <p>Tableau Public dashboards showcasing data visualization and analytical insights will be added here.</p>
-      </div>
-      -->
     </section>
 
     <!-- =========================
@@ -373,26 +275,9 @@
 
   </main>
 
-  <!-- =========================
-       FOOTER
-       ========================= -->
   <footer>
     <p>© 2025 Anupama Sachin | Portfolio</p>
   </footer>
-
-  <!-- Floating WhatsApp button (optional) -->
-  <!--
-  <a
-    class="whatsapp-float"
-    href="https://wa.me/94710675067?text=Hi%20Anupama%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Chat on WhatsApp"
-    title="Chat on WhatsApp"
-  >
-    <span class="wa-icon">💬</span>
-  </a>
-  -->
 
 </body>
 </html>
