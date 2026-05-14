@@ -5,279 +5,251 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anupama Sachin | Portfolio</title>
 
-  <!-- CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- JS -->
   <script defer src="script.js"></script>
 </head>
 
 <body>
 
-  <!-- Skip link (accessibility + better mobile UX) -->
-  <a class="skip-link" href="#about">Skip to content</a>
+  <a class="skip-link" href="#projects">Skip to content</a>
 
-  <!-- =========================
-       HEADER / NAVIGATION
-       ========================= -->
-  <header>
+<header>
     <nav class="nav">
       <h2 class="logo">Anupama<span>Sachin</span></h2>
 
-      <!-- Hamburger button for mobile -->
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-label="Open menu"
-        aria-controls="primary-nav"
-        aria-expanded="false"
-      >
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
 
-      <!-- Nav links -->
       <ul id="primary-nav" class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#reports">Reports</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
   </header>
 
   <main>
-
-    <!-- =========================
-         HERO SECTION
-         ========================= -->
-    <section class="hero" id="top">
-      <canvas id="mathSnow" aria-hidden="true"></canvas>
-
-      <div class="hero-content fade-in">
-        <div class="hero-grid">
-
-          <!-- LEFT: TEXT -->
-          <div class="hero-left">
-            <h1>Hello, I'm <span>Sachin</span></h1>
-
-            <!-- ✅ NEW: Typing line (JS will fill #typed-text) -->
-            <h3 class="typing-line" aria-label="Professional roles">
-              <span id="typed-text">Power BI Developer</span>
-              <span class="cursor" aria-hidden="true">|</span>
-            </h3>
-
-            <p>MSc (Business Analytics) | BSc (Applied Sciences)</p>
-
-            <a href="#contact" class="btn-primary">Contact Me</a>
-
-            <div class="skills-ticker" aria-label="Key skills scrolling list">
-              <div class="ticker-track">
-                <span>Power BI</span>
-                <span>DAX</span>
-                <span>SQL</span>
-                <span>Power Query</span>
-                <span>Excel (Advanced)</span>
-                <span>Power Apps</span>
-                <span>Power Automate</span>
-                <span>Data Modelling</span>
-                <span>Dashboard Design</span>
-                <span>Python</span>
-                <span>R</span>
-
-                <!-- duplicate for infinite loop -->
-                <span aria-hidden="true">Power BI</span>
-                <span aria-hidden="true">DAX</span>
-                <span aria-hidden="true">SQL</span>
-                <span aria-hidden="true">Power Query</span>
-                <span aria-hidden="true">Excel (Advanced)</span>
-                <span aria-hidden="true">Power Apps</span>
-                <span aria-hidden="true">Power Automate</span>
-                <span aria-hidden="true">Data Modelling</span>
-                <span aria-hidden="true">Dashboard Design</span>
-                <span aria-hidden="true">Python</span>
-                <span aria-hidden="true">R</span>
-              </div>
-            </div>
+<section id="home" class="hero fade-in">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <h1>Hi, I'm <span class="highlight">Anupama Sachin</span></h1>
+          <h3>I am a <span id="typed-role" class="highlight-role">Power BI Developer</span></h3>
+          <p>Transforming Complex Data into Actionable Business Intelligence. Specializing in end-to-end Power BI development, complex DAX modeling, and automated ETL workflows to drive business growth.</p>
+          <div class="hero-actions">
+            <a href="Assets/Anupama_Sachin_CV.pdf" class="btn cv-btn" download>Download CV &darr;</a>
+            <a href="#projects" class="btn primary-btn">View My Work</a>
           </div>
-
-          <!-- RIGHT: PHOTO -->
-          <div class="hero-right">
-            <div class="profile-wrap">
-              <img
-                src="./assete/profile.jpg"
-                alt="Anupama Sachin"
-                loading="eager"
-                decoding="async"
-              />
-            </div>
+        </div>
+        <div class="hero-right">
+          <div class="profile-wrap">
+            <img src="Assets/Anupama Sachin.png" alt="Anupama Sachin Profile Photo" />
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- =========================
-         ABOUT
-         ========================= -->
+<section id="projects" class="section fade-in">
+  <h2>Data <span>Reports & Projects</span></h2>
+
+  <h3 class="category-title">📊 Power BI Dashboards</h3>
+  <div class="bento-grid">
+    
+    <div class="bento-card" onclick="openModal('https://app.powerbi.com/view?r=eyJrIjoiNTZiNGZlNDYtZjE3Yi00OWFkLWFjOTMtMWFiNTNkMTQzNGQxIiwidCI6ImZjZTBlNzU1LTE4ZjktNDUzYy04ZmQ2LTNhMjAxM2M1N2U5ZCJ9')">
+      <div class="card-icon">🏝️</div>
+      <h3>Sri Lanka Tourist Arrivals (2018-2024)</h3>
+      <p>Comprehensive Power BI dashboard analyzing tourist arrival patterns, including Regional trends and COVID-19 impact recovery (Pre/Post COVID).</p>
+      <ul style="margin-top: 10px; font-size: 0.85rem; color: #64748b; list-style: none;">
+        <li>✅ Summary, Regional & Detailed drill-downs</li>
+        <li>✅ Recovery analysis (Pre vs Post COVID)</li>
+        <li>✅ Monthly trend & Country-wise distribution</li>
+      </ul>
+      <span class="click-text" style="margin-top: 15px;">View Full Report &rarr;</span>
+    </div>
+
+    <div class="bento-card" onclick="openModal('https://app.powerbi.com/view?r=eyJrIjoiN2ZkNTA0YWQtNGNiZi00NzgzLWFjNjgtNjlmYTM4OTQ5MjY0IiwidCI6ImZjZTBlNzU1LTE4ZjktNDUzYy04ZmQ2LTNhMjAxM2M1N2U5ZCJ9')">
+      <div class="card-icon">🎓</div>
+      <h3>Student Performance & Well-being</h3>
+      <p>A modern, high-end UI/UX Power BI dashboard analyzing how lifestyle factors like sleep, diet, and mental health impact academic GPA.</p>
+      <ul style="margin-top: 10px; font-size: 0.85rem; color: #64748b; list-style: none;">
+        <li>✅ Modern Dark Theme & Glassmorphism UI</li>
+        <li>✅ Impact analysis: Sleep, Mental Health & Diet vs GPA</li>
+        <li>✅ Predictive insights for at-risk students</li>
+      </ul>
+      <span class="click-text" style="margin-top: 15px;">View Full Report &rarr;</span>
+    </div>
+
+   <div class="bento-card" onclick="openModal('https://app.powerbi.com/view?r=eyJrIjoiMGU1ZjY4ZmItZmJiOS00MjljLWExMGQtZTFhYzNhNTRjNDM2IiwidCI6ImYzZmMyY2Y5LWUzMTItNDBmOS1hNDQ4LTkyMWJjNmZhMmViYSIsImMiOjEwfQ%3D%3D&pageName=88c4048e3cc14a9dabd8')">
+      <div class="card-icon">🛒</div>
+      <h3>Global Super Store Sales Analytics</h3>
+      <p>A multi-page high-end Power BI report featuring deep dives into Product performance, Profitability metrics, and Global Geo-analysis.</p>
+      <ul style="margin-top: 10px; font-size: 0.85rem; color: #64748b; list-style: none;">
+        <li>✅ Multi-page navigation (Overview, Product, Geo)</li>
+        <li>✅ Advanced Profit vs Loss & Growth tracking</li>
+        <li>✅ Shipping cost & Category performance insights</li>
+      </ul>
+      <span class="click-text" style="margin-top: 15px;">View Full Report &rarr;</span>
+    </div>
+
+    <div class="bento-card" onclick="openModal('https://app.powerbi.com/view?r=eyJrIjoiM2Q2ODQzNGEtNDNmMy00ZDA1LTg3NzEtMGQ4NzBlMWMyZDA1IiwidCI6ImYzZmMyY2Y5LWUzMTItNDBmOS1hNDQ4LTkyMWJjNmZhMmViYSIsImMiOjEwfQ%3D%3D&pageName=5d302a77c746f1f10046')">
+      <div class="card-icon">👥</div>
+      <h3>HR Talent & Workforce Analytics</h3>
+      <p>A comprehensive HR dashboard tracking workforce demographics, performance trends, and attrition insights to support strategic human capital management.</p>
+      <ul style="margin-top: 10px; font-size: 0.85rem; color: #64748b; list-style: none;">
+        <li>✅ Employee Attrition & Retention analysis</li>
+        <li>✅ Performance vs Project Involvement metrics</li>
+        <li>✅ Demographic & Role-based distributions</li>
+      </ul>
+      <span class="click-text" style="margin-top: 15px;">View Full Report &rarr;</span>
+    </div>
+
+  </div>
+
+  <h3 class="category-title">📱 Power Apps Solutions</h3>
+  <div class="bento-grid">
+    
+    <div class="bento-card" onclick="openModal('https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE')">
+      <div class="card-icon">🏗️</div>
+      <h3>Infrastructure Field Inspection App</h3>
+      <p>Developed for the Infrastructure Team to submit digital inspection reports directly from locations. 
+         Eliminated reporting delays and data loss, significantly streamlining the management approval workflow.</p>
+      <ul style="margin-top: 10px; font-size: 0.85rem; color: #64748b; list-style: none;">
+        <li>✅ Reduced reporting lead time</li>
+        <li>✅ Zero reporting misses</li>
+        <li>✅ Real-time management visibility</li>
+      </ul>
+      
+    </div>
+
+  </div>
+
+  <h3 class="category-title">⚡ Power Automate Workflows</h3>
+  <div class="bento-grid">
+    
+    <div class="bento-card" onclick="openModal('https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE')">
+      <div class="card-icon">📜</div>
+      <h3>Legal Agreement Renewal Notification System</h3>
+      <p>Automated cloud flow built with Power Automate and Excel to track and notify upcoming agreement renewals. Eliminated manual tracking and ensured zero misses on sensitive deadlines.</p>
+      <ul style="margin-top: 10px; font-size: 0.85rem; color: #64748b; list-style: none;">
+        <li>✅ 100% Automated (No manual effort)</li>
+        <li>✅ Zero miss on sensitive legal deadlines</li>
+        <li>✅ Proactive on-time renewal notifications</li>
+      </ul>
+     
+    </div>
+
+   <div class="bento-card" onclick="openModal('https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE')">
+      <div class="card-icon">📧</div>
+      <h3>ATM/CDM Cash Movement Alerts</h3>
+      <p>Automated email notification system that triggers after data updates (Morning/Evening) to alert teams about ATMs/CDMs with zero cash movement. Ensures 100% reporting accuracy by eliminating human error.</p>
+      <ul style="margin-top: 10px; font-size: 0.85rem; color: #64748b; list-style: none;">
+        <li>✅ Scheduled Automation (Morning & Evening)</li>
+        <li>✅ Zero reporting misses on stagnant machines</li>
+        <li>✅ Eliminates human error in critical status updates</li>
+      </ul>
+      
+    </div>
+
+  </div>
+</section>
+
     <section id="about" class="section fade-in">
-      <h2>About Me</h2>
-      <p>
-        I am a multi-skilled professional with strong expertise in data analytics, business intelligence,
-        and digital transformation. With hands-on experience in Power BI, SQL, Excel, automation tools,
-        and dashboard development, I create analytical solutions that improve decision-making and operational efficiency.
-        Currently pursuing an MSc in Business Analytics, I focus on solving real-world business problems using
-        data-driven insights.
-      </p>
+      <h2>About <span>Me</span></h2>
+      <div class="content-box">
+        <p>I am a data-driven professional with extensive experience in the Microsoft Power Platform, specializing in end-to-end Power BI development, complex DAX modeling, and automated ETL workflows. I have a proven track record of transforming raw operational data into interactive executive dashboards that saved 8+ hours per week in manual tracking and improved reporting efficiency by 20%.</p>
+        <p style="margin-top: 15px;">I hold a BSc in Applied Sciences and am currently pursuing an MSc in Business Analytics to integrate advanced predictive insights into business intelligence solutions.</p>
+      </div>
     </section>
 
-    <!-- =========================
-         SKILLS
-         ========================= -->
     <section id="skills" class="section fade-in">
-      <h2>Skills</h2>
+      <h2>My <span>Skills</span></h2>
       <div class="skills-grid">
-        <div class="skill-card">Power BI</div>
-        <div class="skill-card">ML</div>
-        <div class="skill-card">DAX</div>
-        <div class="skill-card">SQL</div>
-        <div class="skill-card">Python</div>
-        <div class="skill-card">R</div>
-        <div class="skill-card">Excel (Advanced)</div>
-        <div class="skill-card">Power Apps</div>
-        <div class="skill-card">Power Automate</div>
-        <div class="skill-card">Data Modelling</div>
-        <div class="skill-card">ETL Pipeline</div>
+        <div class="skill-card">
+          <h3>📊 Data & BI</h3>
+          <p>Power BI, Advanced Excel, Power Query / ETL, SQL</p>
+        </div>
+        <div class="skill-card">
+          <h3>⚙️ Cloud & Ecosystem</h3>
+          <p>Azure + Azure Data Lake, Power Platform, Data Integration</p>
+        </div>
+        <div class="skill-card">
+          <h3>⚡ Analytics</h3>
+          <p>Executive Dashboards, KPI Analysis, Forecasting & Trend Analysis</p>
+        </div>
       </div>
     </section>
 
-    <!-- =========================
-         EXPERIENCE
-         ========================= -->
     <section id="experience" class="section fade-in">
-      <h2>Experience</h2>
-
-      <div class="experience-box">
-        <h3>Data Analyst – Hitachi Digital Payment Solutions <span style="font-weight:400;">(2021 – Present)</span></h3>
-        <p><strong>Tools Used:</strong> Power BI, Power Query, DAX, Microsoft SharePoint, Excel</p>
-        <ul>
-          <li>Designed and developed interactive <strong>Power BI dashboards</strong> to monitor daily operational tasks and provide weekly updates on departmental performance.</li>
-          <li>Automated weekly operational reporting, streamlining task completion analysis and improving visibility of performance trends throughout the year.</li>
-          <li>Performed <strong>ETL processes</strong> using Power Query, including data extraction, cleaning, transformation, and preparation from multiple data sources.</li>
-          <li>Built optimized <strong>data models</strong> and wrote advanced <strong>DAX measures</strong> to calculate key metrics and KPIs.</li>
-          <li>Developed visually intuitive and interactive reports to support <strong>data-driven decision-making</strong> across operational teams.</li>
+      <h2>My <span>Experience</span></h2>
+      
+      <div class="content-box">
+        <h3 style="color: #2563eb; margin-bottom: 5px;">Executive (Analysis) / Data Analyst</h3>
+        <p><strong>Hitachi Digital Payment Solutions</strong> | 2020 - Present</p>
+        <ul style="margin-left: 20px; margin-top: 10px; color: #475569;">
+          <li>Engineered multi-page Power BI dashboards using advanced DAX to track KPIs, saving ~8 hours per week.</li>
+          <li>Built robust Power Query (M) processes, improving data accuracy by 10%.</li>
+          <li>Developed a custom Power Apps solution for ATM monitoring, enabling real-time reporting.</li>
+          <li>Automated weekly stakeholder updates, reducing manual reporting effort by 20%.</li>
         </ul>
       </div>
 
-      <div class="experience-box">
-        <h3>Executive – Novus Technologies Pte Ltd <span style="font-weight:400;">(2018 – 2020)</span></h3>
-        <p><strong>Projects:</strong> DFCC Bank (ATM / CRM), Peoples Bank (ATM / CRM)</p>
-        <p><strong>Tools Used:</strong> Advanced Excel, Power Query</p>
-        <ul>
-          <li>Developed and maintained <strong>Excel dashboards</strong> to monitor supplier operations and service quality, improving operational visibility for banking clients.</li>
-          <li>Created <strong>ATM and CRM reconciliation models</strong> using Excel and Power Query, enhancing reconciliation accuracy and streamlining operational processes.</li>
-          <li>Built a <strong>Terminal Performance Dashboard</strong> to identify frequent breakdowns and customer access failures, enabling the implementation of <strong>preventive maintenance (PM)</strong> services and reducing downtime.</li>
-          <li>Designed and maintained <strong>Supplier Operations Dashboards</strong> using advanced formulas, pivot tables, conditional formatting, and customized charts to enhance service delivery for bank customers.</li>
-          <li>Managed an <strong>Asset Monitoring Dashboard</strong> in Excel to track asset status, utilizing data import/export, VLOOKUP, and advanced formulas for accurate reporting.</li>
+      <div class="content-box">
+        <h3 style="color: #2563eb; margin-bottom: 5px;">Executive</h3>
+        <p><strong>Novus Technologies Pte Ltd (DFCC Bank ATM/CRM Project)</strong> | 2018 - 2020</p>
+        <ul style="margin-left: 20px; margin-top: 10px; color: #475569;">
+          <li>Designed automated Excel-based dashboards to monitor terminal breakdown patterns.</li>
+          <li>Developed complex reconciliation models to streamline financial operations and improve accuracy.</li>
         </ul>
       </div>
-
-      <div class="experience-box">
-        <h3>Implant Trainee – MAS Linea AQUA (Sourcing & Supply Chain) <span style="font-weight:400;">(2017 – 2018)</span></h3>
-        <p><strong>Tools Used:</strong> Advanced Excel, Visio</p>
-        <ul>
-          <li>Created <strong>Excel-based purchasing order tracking modules</strong> using conditional formatting, data validation, and advanced formulas to ensure real-time status updates and data accuracy.</li>
-          <li>Assisted in <strong>process improvement initiatives</strong> by implementing and modifying process maps, identifying operational gaps, and supporting daily workflow optimization.</li>
-          <li>Coordinated with <strong>foreign customers</strong> to manage freight operations, ensuring on-time deliveries and maintaining accuracy in logistics and documentation.</li>
+      
+      <div class="content-box">
+        <h3 style="color: #2563eb; margin-bottom: 5px;">Implant Trainee (Sourcing & Supply Chain)</h3>
+        <p><strong>MAS Linea AQUA</strong> | 2017 - 2018</p>
+        <ul style="margin-left: 20px; margin-top: 10px; color: #475569;">
+          <li>Developed Excel trackers to monitor purchase order status with validation rules.</li>
+          <li>Completed merchandising training to understand the end-to-end product development and sourcing lifecycle.</li>
+          <li>Supported process improvement initiatives by updating process maps and documenting operational gaps.</li>
         </ul>
       </div>
     </section>
 
-    <!-- =========================
-         PROJECTS
-         ========================= -->
-    <section id="projects" class="section fade-in">
-      <h2>Projects</h2>
-
-      <div class="project-card">
-        <h3>HR Analytics Dashboard</h3>
-        <p>Developed an interactive <strong>Power BI dashboard</strong> to analyze employee trends, workforce demographics, and turnover patterns, supporting HR decision-making.</p>
-        <p><strong>Technologies:</strong> Power BI, Power Query, DAX, Excel</p>
-      </div>
-
-      <div class="project-card">
-        <h3>Sales Dashboard (Kaggle Dataset)</h3>
-        <p>Designed and developed a <strong>Power BI sales dashboard</strong> using a Kaggle dataset to analyze store operations and business performance.</p>
-        <p><strong>Technologies:</strong> Power BI, Power Query, DAX, Excel</p>
-      </div>
-    </section>
-
-    <!-- =========================
-         REPORTS
-         ========================= -->
-    <section id="reports" class="section fade-in">
-      <h2>Reports</h2>
-
-      <div class="report-box">
-        <h3>Global Superstore Summary Dashboard (Power BI)</h3>
-
-        <div class="embed-container">
-          <iframe
-            src="https://drive.google.com/file/d/1OPWJGnFnoda1d-vIIuKObBZlQ9QcmOFQ/preview"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen
-            title="Global Superstore Dashboard Video"
-          ></iframe>
-        </div>
-
-        <p class="report-note">
-          <em>Live report access is restricted due to organizational security policies.</em>
-        </p>
-      </div>
-    </section>
-
-    <!-- =========================
-         CONTACT
-         ========================= -->
     <section id="contact" class="section fade-in">
-      <div class="contact-wrap">
-        <div class="contact-info">
-          <h2>Contact</h2>
-
-          <p>Email: <strong>anupama.sachinp@gmail.com</strong></p>
-
-          <p>
-            LinkedIn:
-            <a href="https://www.linkedin.com/in/anupama-sachin" target="_blank" rel="noopener noreferrer">
-              www.linkedin.com/in/anupama-sachin
-            </a>
-          </p>
-
-          <p>Phone: +94 71 067 5067</p>
-        </div>
-
-        <a
-          class="whatsapp-inline"
-          href="https://wa.me/94710675067?text=Hi%20Anupama%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp"
-          title="Chat on WhatsApp"
-        >
-          <span class="wa-icon">💬</span>
-          <span class="wa-text">WhatsApp</span>
-        </a>
+      <div class="contact-wrap content-box">
+        <h2>Contact</h2>
+        <p>Email: <strong>anupama.sachinp@gmail.com</strong></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/anupama-sachin" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/anupama-sachin</a></p>
+        <p>Phone: +94 71 067 5067</p>
+        <a class="btn primary-btn" style="margin-top: 15px;" href="https://wa.me/94710675067" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
       </div>
     </section>
-
   </main>
 
   <footer>
-    <p>© 2025 Anupama Sachin | Portfolio</p>
+    <p>&copy; <span id="year"></span> Anupama Sachin. All rights reserved.</p>
   </footer>
+
+  <div id="reportModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div class="modal-iframe-wrapper">
+        <iframe id="modalIframe" src="" allowFullScreen="true" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
